@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora Solutionz — Professional Business Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:    #FFFFFF;
+      --offwhite: #F7F8FC;
+      --charcoal: #1A1A2E;
+      --slate:    #2D3748;
+      --mid:      #6B7280;
+      --border:   #E2E6EF;
+      --gold:     #C9A84C;
+      --gold-dim: rgba(201,168,76,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 6vw;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .logo-wrap {
+      display: flex; flex-direction: column; gap: 0;
+    }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      color: var(--charcoal);
+      line-height: 1.1;
+    }
+    .logo-rule {
+      height: 2px;
+      background: var(--gold);
+      width: 100%;
+      margin-top: 3px;
+    }
+    .logo-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: 500;
+    }
+
+    nav ul { list-style: none; display: flex; align-items: center; gap: 2.5rem; }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: var(--charcoal); }
+
+    .nav-cta {
+      background: var(--charcoal) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      letter-spacing: 0.04em;
+      font-size: 0.82rem !important;
+      text-transform: uppercase;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold) !important; color: var(--charcoal) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 9rem 6vw 5rem;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle background grid texture */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-visual { display: none; }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      max-width: 460px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold); color: var(--charcoal); }
+
+    .btn-outline {
+      border: 1.5px solid var(--border);
+      color: var(--slate);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--charcoal); color: var(--charcoal); }
+
+    /* Hero visual panel */
+    .hero-visual {
+      background: var(--offwhite);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .metric-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .metric-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .metric-num span { color: var(--gold); }
+    .metric-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-weight: 500;
+    }
+    .metric-change {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #2D7D46;
+      background: #E6F4EC;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 6vw;
+    }
+    .gold-divider {
+      height: 2px;
+      width: 60px;
+      background: var(--gold);
+      margin: 0 auto 3rem;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 7rem 6vw;
+      background: var(--white);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      max-width: 40px;
+      height: 1.5px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 0.97rem;
+      color: var(--mid);
+      max-width: 480px;
+      line-height: 1.7;
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .service-card {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border);
+      background: var(--white);
+      transition: background 0.2s;
+      position: relative;
+    }
+    .service-card:last-child { border-right: none; }
+    .service-card:hover { background: var(--offwhite); }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.3s ease;
+    }
+    .service-card:hover::after { height: 100%; }
+
+    .service-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      transition: color 0.2s;
+    }
+    .service-card:hover .service-num { color: var(--gold-dim); }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+    }
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .service-link:hover { color: var(--gold); }
+    .service-link::after { content: '→'; }
+
+    /* ── STATS ── */
+    .stats {
+      background: var(--charcoal);
+      padding: 5rem 6vw;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
+    .stat-item {
+      padding: 1.5rem 0;
+      border-top: 2px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:first-child { border-top-color: var(--gold); }
+    .stat-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-big em { font-style: normal; color: var(--gold); }
+    .stat-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ── WHY ── */
+    .why {
+      padding: 7rem 6vw;
+      background: var(--offwhite);
+    }
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    .why-left { position: sticky; top: 100px; }
+    .why-left p {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-top: 1rem;
+    }
+
+    .pillars { display: flex; flex-direction: column; gap: 0; }
+    .pillar {
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+    .pillar:first-child { border-top: 1px solid var(--border); }
+    .pillar-idx {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      padding-top: 2px;
+    }
+    .pillar h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.01em;
+    }
+    .pillar p { font-size: 0.88rem; color: var(--mid); line-height: 1.7; font-weight: 300; }
+
+    /* ── CTA ── */
+    .cta-section {
+      padding: 7rem 6vw;
+      background: var(--white);
+    }
+    .cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    .cta-inner p { font-size: 1rem; color: var(--mid); margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
+
+    .cta-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cta-form input {
+      flex: 1; min-width: 240px;
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      padding: 0.85rem 1.1rem;
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      outline: none;
+      background: var(--offwhite);
+      transition: border-color 0.2s;
+    }
+    .cta-form input::placeholder { color: var(--mid); }
+    .cta-form input:focus { border-color: var(--gold); background: var(--white); }
+    .cta-form .btn-primary { flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--gold); }
+    footer p { font-size: 0.8rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .service-card:last-child { border-bottom: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap">
+    <span class="logo-name">Nexora Solutionz</span>
+    <div class="logo-rule"></div>
+    <span class="logo-sub">Professional Services</span>
+  </div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Trusted Business Partner</div>
+      <h1>Driving Growth Through <em>Expert</em> Business Solutions</h1>
+      <p class="hero-desc">Nexora Solutionz delivers professional cold calling, customer support, and dispatch services that help your company scale efficiently and build lasting client relationships.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Schedule a Consultation</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="metric-row">
+        <div>
+          <div class="metric-num">10<span>+</span></div>
+          <div class="metric-label">Years Combined Experience</div>
+        </div>
+        <div class="metric-change">Expert Team</div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-num">100<span>%</span></div>
+          <div class="metric-label">Commitment to Quality</div>
+        </div>
+        <div class="metric-change">Guaranteed</div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-num">3<span>×</span></div>
+          <div class="metric-label">Faster Lead Response</div>
+        </div>
+        <div class="metric-change">vs. Industry Avg</div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-num">24<span>/7</span></div>
+          <div class="metric-label">Coverage Available</div>
+        </div>
+        <div class="metric-change">Always On</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">What We Offer</div>
+  <h2 class="section-title">Services built for your bottom line</h2>
+  <p class="section-sub">Every service we provide is designed to integrate seamlessly into your operations and generate measurable results from day one.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <h3>Cold Calling</h3>
+      <p>Our highly trained agents engage your target market with precision and professionalism — generating qualified leads that give your sales pipeline the volume it needs to grow.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <h3>Customer Support</h3>
+      <p>We handle inbound inquiries, issue resolution, and follow-ups on your behalf — maintaining your brand voice and ensuring every customer feels valued and heard.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <h3>Dispatch Services</h3>
+      <p>Real-time coordination for your field operations and logistics — reducing delays, improving communication, and keeping your team running on schedule, every time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-big">10<em>+</em></div>
+      <div class="stat-desc">Years Combined Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-big">100<em>%</em></div>
+      <div class="stat-desc">Quality Commitment</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-big">3<em>×</em></div>
+      <div class="stat-desc">Faster Lead Response</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-big">24<em>/7</em></div>
+      <div class="stat-desc">Support Coverage</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-inner">
+    <div class="why-left">
+      <div class="section-label">Why Nexora</div>
+      <h2 class="section-title">We work as an extension of your team</h2>
+      <p>We don't operate like a generic outsourcing firm. Every engagement is tailored to your goals, your voice, and your customers — so results actually reflect on your brand.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-idx">I</div>
+        <div>
+          <h4>Industry-Trained Professionals</h4>
+          <p>Our agents are onboarded to your specific industry and tone — not handed a script and left to improvise.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-idx">II</div>
+        <div>
+          <h4>Full Transparency & Reporting</h4>
+          <p>You receive regular performance reports and have full visibility into call logs, case resolutions, and dispatch records.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-idx">III</div>
+        <div>
+          <h4>Flexible Scaling</h4>
+          <p>Scale coverage up during busy periods and back down when demand eases — no long-term lock-ins or rigid contracts.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-idx">IV</div>
+        <div>
+          <h4>Results-First Approach</h4>
+          <p>We measure our success by the outcomes we deliver — qualified leads, resolved tickets, and on-time dispatches. Nothing else matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="justify-content:center;">Get In Touch</div>
+    <div class="gold-divider"></div>
+    <h2>Ready to take your business to the next level?</h2>
+    <p>Leave your email and a member of our team will reach out within 24 hours to discuss how Nexora Solutionz can support your growth.</p>
+    <div class="cta-form">
+      <input type="email" placeholder="your@company.com" />
+      <a href="#" class="btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Nexora <span>Solutionz</span></div>
+  <p>© 2026 Nexora Solutionz. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
