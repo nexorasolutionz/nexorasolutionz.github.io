@@ -506,7 +506,113 @@
     .cta-form input:focus { border-color: var(--gold); background: var(--white); }
     .cta-form .btn-primary { flex-shrink: 0; }
 
+    /* ── WHY CHOOSE US ── */
+    .why-choose {
+      padding: 7rem 6vw;
+      background: var(--white);
+    }
+    .why-choose-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .choose-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--offwhite);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.6rem;
+      transition: border-color 0.2s;
+    }
+    .choose-item:hover { border-color: var(--gold); }
+    .choose-check {
+      color: var(--gold);
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .choose-item h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.4rem;
+    }
+    .choose-item p {
+      font-size: 0.87rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── CONTACT CARDS ── */
+    .contact-cards {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--offwhite);
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      padding: 1.2rem 1.8rem;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+      min-width: 280px;
+    }
+    .contact-card:hover { border-color: var(--gold); background: var(--white); }
+    .whatsapp-card:hover { border-color: #25D366; }
+    .contact-icon {
+      font-size: 1.3rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--gold-dim);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .whatsapp-card .contact-icon { color: #25D366; background: rgba(37,211,102,0.1); }
+    .contact-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.2rem;
+    }
+    .contact-value {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
     /* ── FOOTER ── */
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-links span { color: rgba(255,255,255,0.2); }
+
     footer {
       background: var(--charcoal);
       color: rgba(255,255,255,0.5);
@@ -626,88 +732,4 @@
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-big">10<em>+</em></div>
-      <div class="stat-desc">Years Combined Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">100<em>%</em></div>
-      <div class="stat-desc">Quality Commitment</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">3<em>×</em></div>
-      <div class="stat-desc">Faster Lead Response</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-big">24<em>/7</em></div>
-      <div class="stat-desc">Support Coverage</div>
-    </div>
-  </div>
-</div>
-
-<!-- WHY US -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="why-left">
-      <div class="section-label">Why Nexora</div>
-      <h2 class="section-title">We work as an extension of your team</h2>
-      <p>We don't operate like a generic outsourcing firm. Every engagement is tailored to your goals, your voice, and your customers — so results actually reflect on your brand.</p>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-idx">I</div>
-        <div>
-          <h4>Industry-Trained Professionals</h4>
-          <p>Our agents are onboarded to your specific industry and tone — not handed a script and left to improvise.</p>
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-idx">II</div>
-        <div>
-          <h4>Full Transparency & Reporting</h4>
-          <p>You receive regular performance reports and have full visibility into call logs, case resolutions, and dispatch records.</p>
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-idx">III</div>
-        <div>
-          <h4>Flexible Scaling</h4>
-          <p>Scale coverage up during busy periods and back down when demand eases — no long-term lock-ins or rigid contracts.</p>
-        </div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-idx">IV</div>
-        <div>
-          <h4>Results-First Approach</h4>
-          <p>We measure our success by the outcomes we deliver — qualified leads, resolved tickets, and on-time dispatches. Nothing else matters.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section" id="contact">
-  <div class="cta-inner">
-    <div class="section-label" style="justify-content:center;">Get In Touch</div>
-    <div class="gold-divider"></div>
-    <h2>Ready to take your business to the next level?</h2>
-    <p>Leave your email and a member of our team will reach out within 24 hours to discuss how Nexora Solutionz can support your growth.</p>
-    <div class="cta-form">
-      <input type="email" placeholder="your@company.com" />
-      <a href="#" class="btn-primary">Get Started</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Nexora <span>Solutionz</span></div>
-  <p>© 2026 Nexora Solutionz. All rights reserved.</p>
-</footer>
-
-</body>
-</html>
+<!-
